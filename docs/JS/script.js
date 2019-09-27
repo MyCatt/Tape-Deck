@@ -21,7 +21,7 @@ let googleUser, isSignedIn
 const provider = new firebase.auth.GoogleAuthProvider()
 provider.addScope(SCOPES)
 console.log('main script')
-const handleClientLoad = () => {
+function handleClientLoad() {
   gapi.load('client:auth2', initClient)
 }
 

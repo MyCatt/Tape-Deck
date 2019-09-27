@@ -33,9 +33,9 @@ const initClient = () => {
     discoveryDocs: DISCOVERY_DOCS,
     scope: SCOPES,
   }).then(() => {
-    console.log("Pop up")
     googleUser = gapi.auth2.getAuthInstance().currentUser.get()
     isSignedIn = gapi.auth2.getAuthInstance().isSignedIn.get() 
+    console.log(isSignedIn)
     if (isSignedIn) {
       // get the credentials from the google auth response
       const idToken = googleUser.getAuthResponse().id_token

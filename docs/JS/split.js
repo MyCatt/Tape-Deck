@@ -10,7 +10,7 @@ const split_frame = document.getElementById("right-view")
 const split_button = document.getElementById("split")
 
 split_button.addEventListener('click', () => {
-    //sheet_frame.src = "https://docs.google.com/spreadsheets/d/1Ak_zvY5HqoeODZJO7goJBVDxU4uFkHeS6NKsYmuztk8"
+    sheet_frame.src = "https://docs.google.com/spreadsheets/d/1Ak_zvY5HqoeODZJO7goJBVDxU4uFkHeS6NKsYmuztk8"
 })
 
 message.addEventListener('click', () => {

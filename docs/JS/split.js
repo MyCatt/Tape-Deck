@@ -13,7 +13,7 @@ const split_button = document.getElementById("split")
 split_button.addEventListener('click', () => {
     sheet_frame.src = "https://docs.google.com/spreadsheets/d/1Ak_zvY5HqoeODZJO7goJBVDxU4uFkHeS6NKsYmuztk8"
 })
-
+message.style.display = 'block'
 message.addEventListener('click', () => {
     console.log('clicked')
     message.style.display = 'none'

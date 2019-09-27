@@ -17,6 +17,7 @@ body {
 }
 
 #message {
+    display: none;
     position: fixed;
     top: 25px;
     left: 50%;

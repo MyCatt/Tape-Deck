@@ -35,7 +35,6 @@ const initClient = () => {
   }).then(() => {
     googleUser = gapi.auth2.getAuthInstance().currentUser.get()
     isSignedIn = gapi.auth2.getAuthInstance().isSignedIn.get() 
-    console.log(isSignedIn)
     if (isSignedIn) {
       // get the credentials from the google auth response
       const idToken = googleUser.getAuthResponse().id_token
@@ -68,6 +67,7 @@ document.getElementById('sign_in_btn').addEventListener('click', () => {
       const errorMessage = error.message
       const email = error.email
       const credential = error.credential
+          console.log(errorCode)
     })
 })
 

@@ -39,6 +39,7 @@ const initClient = () => {
       // get the credentials from the google auth response
       const idToken = googleUser.getAuthResponse().id_token
       const creds = firebase.auth.GoogleAuthProvider.credential(idToken)
+      console.log('Signing in')
       // auth in the user 
       firebase.auth().signInWithCredential(creds).then((user) => {
          // you can use (user) or googleProfile to setup the user

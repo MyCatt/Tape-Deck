@@ -32,7 +32,17 @@ body {
     -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.15);
     -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.15);
     box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.15);
+    animation: 0.3s loadMessage forwards;
 } 
+
+@keyframes loadMessage {
+  0% {
+    transform: scale(1.25) translate(-35%, 15px);
+  }
+  100% {
+    transform: scale(1) translate(-50%, 15px);
+  }
+}
 
 #message button {
     border: 0;

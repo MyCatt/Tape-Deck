@@ -1,0 +1,101 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+#split {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    background: #1352fd;
+    padding: 10px;
+    height: 30px;
+    border-radius: 25px;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.15);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.15);
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.15);
+}
+
+#message {
+    display: none;
+    position: fixed;
+    top: 25px;
+    left: 50%;
+    transform: translate(-50%, 15px);
+    width: 400px;
+    background: #1352fd;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    color: #fff;
+    border-radius: 4px;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.15);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.15);
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.15);
+    animation: 0.3s loadMessage forwards;
+} 
+
+@keyframes loadMessage {
+  0% {
+    transform: scale(1.25) translate(-35%, 15px);
+  }
+  100% {
+    transform: scale(1) translate(-50%, 15px);
+  }
+}
+
+#message button {
+    border: 0;
+    outline: 0;
+    padding: 10px 25px;
+    border: 2px solid #fff;
+    background: none;
+    color: #fff;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+#message button:hover {
+    background: #fff;
+    color: #1352fd;
+}
+
+#root {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+  
+  #left-view {
+    box-sizing: border-box;
+    width: 50%;
+    height: 100%;
+    float: left;
+  }
+  
+  #right-view {
+    box-sizing: border-box;
+    width: 50%;
+    height: 100%;
+    float: right;
+    border-left: 5px solid #f3f3f3;
+  }
+  
+  #root iframe {
+    width: 100%;
+    height: 100vh;
+    border: 0;
+  }
+
+
+  @media only screen and (max-width: 900px) {
+    #left-view {
+        width: 100%;
+        height: 100vh;
+    }
+    #right-view {
+        display: none;
+        width: 100%;
+        height: 50vh;
+    }
+  }

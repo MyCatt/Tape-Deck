@@ -92,6 +92,7 @@ firebase.auth().onAuthStateChanged(function(user) {
     loading.style.display = 'none'
     loginWindow.style.display = 'none'
     userContent.style.display = 'block'
+    listMajors()
   } else {
     loading.style.display = 'none'
     userContent.style.display = 'none'
@@ -171,6 +172,7 @@ const appendPre = (message, i) => {
 const listMajors = () => {
   let companyList = []
   const pre = document.getElementById('results_section')
+  pre.innerHTML = ""
   gapi.client.sheets.spreadsheets.values.get({
     spreadsheetId: '1Ak_zvY5HqoeODZJO7goJBVDxU4uFkHeS6NKsYmuztk8',
     range: 'sheet1',
@@ -188,8 +190,16 @@ const listMajors = () => {
       appendPre('No results...')
     }
     }, function(response) {
-      gapi.auth2.getAuthInstance().signIn()
-      appendPre('Error: ' + response.result.error.message)
+      if(response.result.error.code == 403) {
+        setTimeout(() => { 
+          if(!isSignedIn)
+            location.reload() 
+          else
+            listMajors()
+        }, 3000)
+      }else{
+        appendPre('Error: ' + response.result.error.message)
+      }
     })
 }
 
@@ -250,7 +260,8 @@ const writeRow = data => {
     valueInputOption: "USER_ENTERED",
     resource: body
   }).then((response) => {
-    location.reload()
+    console.log('New card created, resfreshing!')
+    listMajors()
   })
 }
 

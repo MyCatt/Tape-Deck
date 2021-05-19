@@ -176,10 +176,11 @@ const listMajors = () => {
   const pre = document.getElementById('results_section')
   pre.innerHTML = ""
   gapi.client.sheets.spreadsheets.values.get({
-    spreadsheetId: '1Ak_zvY5HqoeODZJO7goJBVDxU4uFkHeS6NKsYmuztk8',
+    spreadsheetId: '1xBUpTL6yCGTvHjlygMymEQKzgNpd5k1pGJkT6PCgzvs',
     range: 'sheet1',
   }).then(function(response) {
     const range = response.result
+    console.log(range)
     if (range.values && range.values.length > 0) {
       for (i = 1; i < range.values.length; i++) {
         const row = range.values[i]
@@ -257,7 +258,7 @@ const writeRow = data => {
   const values = [ data ]
   const body = { values: values }
   gapi.client.sheets.spreadsheets.values.append({
-    spreadsheetId: '1Ak_zvY5HqoeODZJO7goJBVDxU4uFkHeS6NKsYmuztk8',
+    spreadsheetId: '1xBUpTL6yCGTvHjlygMymEQKzgNpd5k1pGJkT6PCgzvs',
     range: "A1:E",
     valueInputOption: "USER_ENTERED",
     resource: body
